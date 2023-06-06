@@ -44,7 +44,21 @@ const conectarSocket=async()=>{
             'x-token':localStorage.getItem('token')
         }
     })
+    
+    socket.on('connect', () =>{
+        console.log('Sockets online')
+    });
 
+    socket.on('disconnect', () =>{
+        console.log('Sockets offline')
+    });
+
+    socket.on('recibir-mensajes', dibujarMensajes );
+    socket.on('usuarios-activos', dibujarUsuarios );
+
+    socket.on('mensaje-privado', ( payload ) => {
+        console.log('Privado:', payload )
+    });
 }
 
 const main = async()=>{
