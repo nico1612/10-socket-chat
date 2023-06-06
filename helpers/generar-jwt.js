@@ -1,5 +1,7 @@
 import jwt from 'jsonwebtoken'
 
+import { Usuario } from '../models/usuario.js';
+
 export const generarJWT = ( uid = '' ) => {
 
     return new Promise( (resolve, reject) => {
@@ -19,4 +21,36 @@ export const generarJWT = ( uid = '' ) => {
         })
 
     })
+}
+
+export const comprobarJWT=async(token='')=>{
+
+    try{
+
+        if(token.length<=0){
+            return null
+        }
+
+
+        const {uid}=jwt.verify(token,process.env.SECRETORPRIVATEKEY)
+
+        const usuario = await Usuario.findById(uid)
+        //console.log(usuario)
+        if(usuario){
+            if(usuario.estado){
+                return usuario
+            }
+            else{
+                return null
+            }
+        }
+        else{
+            return null
+        }
+
+    }
+    catch(error){
+        return null
+    }
+
 }

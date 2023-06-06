@@ -54,7 +54,7 @@ export const login = async(req, res = response) => {
 export const googleSignin = async(req, res = response) => {
 
     const { id_token } = req.body;
-    
+
     try {
         const { correo, nombre, img } = await googleVerify( id_token );
 
@@ -72,6 +72,7 @@ export const googleSignin = async(req, res = response) => {
 
             usuario = new Usuario( data );
             await usuario.save();
+
         }
 
         // Si el usuario en DB
@@ -81,21 +82,28 @@ export const googleSignin = async(req, res = response) => {
             });
         }
 
-        console.log("hola mundo")
-
         // Generar el JWT
         const token = await generarJWT( usuario.id );
+
         res.json({
             usuario,
             token
         });
-        
     } catch (error) {
-
         res.status(400).json({
             msg: 'Token de Google no es válido'
         })
-
     }
+}
 
+export const renovarToken=async(req,res=response)=>{
+
+    const {usuario}=req
+
+    const token = await generarJWT( usuario.id );
+
+    res.json({
+        usuario,
+        token
+    })
 }
