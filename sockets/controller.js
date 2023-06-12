@@ -13,25 +13,25 @@ export const socketController=async(socket = new Socket(),io)=>{
     }
 
     chatMensajes.agregarUsuario(usuario)
-    io.emit('usuarios-activos',chatMensajes.usuariosArr())
+    io.emit('usuarios-activos',chatMensajes.usuariosArr)
     io.emit('recibir-mensajes',chatMensajes.ultimos10)
 
 
     socket.join(usuario.id)
 
-    socket.om('disconnect',()=>{
+    socket.on('disconnect',()=>{
         ChatMensajes.borrarUsuario(usuario.id)
-        io.emit('usuarios-activos',chatMensajes.usuariosArr())
+        io.emit('usuarios-activos',chatMensajes.usuariosArr)
     })
 
     socket.on('enviar-mensaje',(uid,mensaje)=>{
 
         if(uid){
-            socket.to(uid).emit('mensaje-pprovado',{de:usuario.nombre,mensaje})
+            socket.to( uid ).emit( 'mensaje-privado', { de: usuario.nombre, mensaje });
         }
         else{
             chatMensajes.enviarMensaje(usuario.id,usuario.nombre,mensaje)
-            io.emit('recibir-mensajes',chatMensajes.ultimos10)
+            io.emit('recibir-mensajes', chatMensajes.ultimos10 );
         }
 
     })

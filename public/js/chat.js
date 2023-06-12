@@ -45,6 +45,7 @@ const conectarSocket=async()=>{
         }
     })
     
+   
     socket.on('connect', () =>{
         console.log('Sockets online')
     });
@@ -59,6 +60,7 @@ const conectarSocket=async()=>{
     socket.on('mensaje-privado', ( payload ) => {
         console.log('Privado:', payload )
     });
+
 }
 
 const dibujarUsuarios=(usuarios=[])=>{
@@ -83,28 +85,26 @@ const dibujarUsuarios=(usuarios=[])=>{
 const dibujarMensajes=(mensajes=[])=>{
 
     let mensajesHTML=''
-    mensajes.forEach(({nombre,mensaje})=>{
+    mensajes.forEach( ({ nombre, mensaje }) => {
 
-        mensajesHTML+=`
+            mensajesHTML += `
+            <li>
+                <p>
+                    <span class="text-primary">${ nombre }: </span>
+                    <span>${ mensaje }</span>
+                </p>
+            </li>
+        `;
+    });
 
-        <li>
-            <p>
-                <span class="text-primary">${nombre}:</span>
-                <span>${mensaje}</span>
-            </p>
-        </li>
-        `
-    })
-
-    ulMensajes.innerHTML=mensajesHTML
-
+    ulMensajes.innerHTML = mensajesHTML;
 }
-
 txtMensaje.addEventListener('keyup',({keyCode})=>{
     
     const mensaje =txtMensaje.value
     const uid= txtUid.value
 
+    console.log(keyCode)
     if(keyCode!==13){
         return
     }

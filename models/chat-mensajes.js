@@ -15,9 +15,9 @@ export class ChatMensajes {
         this.usuarios={}
     }
 
-    get ultimos10(){
-        this.mensajes=this.mensajes.splice(0,10)
-        return this.mensajes
+    get ultimos10() {
+        this.mensajes = this.mensajes.splice(0,10);
+        return this.mensajes;
     }
 
     get usuariosArr(){
@@ -31,7 +31,7 @@ export class ChatMensajes {
     }
 
     agregarUsuario(usuario){
-        this.usuarios[usuarios.id]=usuario
+        this.usuarios[usuario._id]=usuario
     }
 
     borrarUsuario(id){
