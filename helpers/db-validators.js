@@ -29,9 +29,9 @@ export const existeUsuarioPorId = async( id ) => {
     }
 }
 
-/**
- * Categorias
- */
+
+// Categorias
+ 
 export const existeCategoriaPorId = async( id ) => {
 
     // Verificar si el correo existe
@@ -41,9 +41,7 @@ export const existeCategoriaPorId = async( id ) => {
     }
 }
 
-/**
- * Productos
- */
+//Productos
 export const existeProductoPorId = async( id ) => {
 
     // Verificar si el correo existe
@@ -53,9 +51,7 @@ export const existeProductoPorId = async( id ) => {
     }
 }
 
-/**
- * Validar colecciones permitidas
- */
+//Validar colecciones permitidas
 export const coleccionesPermitidas = ( coleccion = '', colecciones = []) => {
 
     const incluida = colecciones.includes( coleccion );

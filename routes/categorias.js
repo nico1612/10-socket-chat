@@ -9,10 +9,6 @@ import {esAdminRole} from '../middlewares/validar-roles.js';
 
 export const routerCategoria=Router()
 
-/**
- * {{url}}/api/categorias
- */
-
 //  Obtener todas las categorias - publico
 routerCategoria.get('/', obtenerCategorias );
 

@@ -9,11 +9,6 @@ import {validarJWT} from "../middlewares/validar-jwt.js"
 
 export const routerProducto=Router()
 
-
-/**
- * {{url}}/api/categorias
- */
-
 //  Obtener todas las categorias - publico
 routerProducto.get('/', obtenerProductos );
 

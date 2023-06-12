@@ -154,7 +154,6 @@ export const mostrarImagen = async(req, res = response ) => {
             return res.status(500).json({ msg: 'Se me olvidó validar esto'});
     }
 
-
     // Limpiar imágenes previas
     if ( modelo.img ) {
         // Hay que borrar la imagen del servidor
@@ -166,4 +165,5 @@ export const mostrarImagen = async(req, res = response ) => {
 
     const pathImagen = path.join( __dirname, '../assets/no-image.jpg');
     res.sendFile( pathImagen );
+
 }
