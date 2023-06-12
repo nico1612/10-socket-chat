@@ -5,7 +5,6 @@ const url = ( window.location.hostname.includes('localhost') )
             ? 'http://localhost:8080/api/auth/'
             : 'https://restserver-curso-fher.herokuapp.com/api/auth/';
 
-
 miFormulario.addEventListener('submit',ev =>{
 
     ev.preventDefault()
@@ -35,7 +34,7 @@ miFormulario.addEventListener('submit',ev =>{
     .catch(err=>{
         console.log(err)
     })
-    
+
 })
 
 function onSignIn(googleUser) {
@@ -59,7 +58,7 @@ function onSignIn(googleUser) {
         localStorage.setItem('token',token)
     })
     .catch( console.log );
-    
+
 }
 
 function signOut() {

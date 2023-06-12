@@ -2,7 +2,6 @@ const url = ( window.location.hostname.includes('localhost') )
             ? 'http://localhost:8080/api/auth/'
             : 'https://restserver-curso-fher.herokuapp.com/api/auth/';
 
-
 let usuario = null
 let socket = null
 
@@ -43,8 +42,7 @@ const conectarSocket=async()=>{
             'x-token':localStorage.getItem('token')
         }
     })
-    
-   
+
     socket.on('connect', () =>{
         console.log('Sockets online')
     });
@@ -63,7 +61,9 @@ const conectarSocket=async()=>{
 }
 
 const dibujarUsuarios=(usuarios=[])=>{
+
     let usersHTML=''
+
     usuarios.forEach(({nombre,uid})=>{
 
         usersHTML+=`
@@ -102,7 +102,7 @@ const dibujarMensajes=(mensajes=[])=>{
 }
 
 txtMensaje.addEventListener('keyup',({keyCode})=>{
-    
+
     const mensaje =txtMensaje.value
     const uid= txtUid.value
 
