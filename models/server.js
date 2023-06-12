@@ -41,7 +41,8 @@ export class ServerChat {
         this.routes();
 
         //sockets
-        this.sockets()
+        this.sockets();
+
     }
 
     async conectarDB() {
