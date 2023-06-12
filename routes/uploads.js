@@ -1,10 +1,10 @@
 import {Router} from 'express'
 import {check} from 'express-validator'
 
-import { validarCampos } from '../middlewares/validar-campos.js';
-import { actualizarImagenCloudinary, cargarArchivo, mostrarImagen } from '../controllers/uploads.js';
-import { coleccionesPermitidas } from "../helpers/db-validators.js"
-import { validarArchivoSubir } from '../middlewares/validar-archivo.js';
+import {actualizarImagenCloudinary, cargarArchivo, mostrarImagen} from '../controllers/uploads.js';
+import {coleccionesPermitidas} from "../helpers/db-validators.js"
+import {validarArchivoSubir} from '../middlewares/validar-archivo.js';
+import {validarCampos} from '../middlewares/validar-campos.js';
 
 export const routerUploads=Router()
 

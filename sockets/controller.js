@@ -1,6 +1,7 @@
-import { Socket } from "socket.io"
-import { comprobarJWT } from "../helpers/generar-jwt.js"
-import { ChatMensajes } from "../models/chat-mensajes.js"
+import {Socket} from "socket.io"
+
+import {ChatMensajes} from "../models/chat-mensajes.js"
+import {comprobarJWT} from "../helpers/generar-jwt.js"
 
 const chatMensajes= new ChatMensajes()
 

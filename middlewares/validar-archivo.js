@@ -1,4 +1,4 @@
-import { response } from "express"
+import {response} from "express"
 
 export const validarArchivoSubir = (req, res = response, next ) => {
 

@@ -1,9 +1,9 @@
 import {Router} from 'express'
 import {check} from 'express-validator'
 
-import { googleSignin, login, renovarToken } from '../controllers/auth.js'
-import { validarCampos } from '../middlewares/validar-campos.js';
-import { validarJWT } from '../middlewares/validar-jwt.js';
+import {googleSignin, login, renovarToken} from '../controllers/auth.js'
+import {validarCampos} from '../middlewares/validar-campos.js';
+import {validarJWT} from '../middlewares/validar-jwt.js';
 
 export const routerAuth = Router();
 

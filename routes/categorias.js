@@ -1,11 +1,11 @@
 import {Router} from 'express'
 import {check} from 'express-validator'
 
-import { validarJWT } from '../middlewares/validar-jwt.js';
-import { actualizarCategoria, borrarCategoria, crearCategoria, obtenerCategoria, obtenerCategorias } from '../controllers/categorias.js';
-import { validarCampos } from '../middlewares/validar-campos.js';
-import { existeCategoriaPorId } from '../helpers/db-validators.js';
-import { esAdminRole } from '../middlewares/validar-roles.js';
+import {actualizarCategoria, borrarCategoria, crearCategoria, obtenerCategoria, obtenerCategorias} from '../controllers/categorias.js';
+import {validarJWT} from '../middlewares/validar-jwt.js';
+import {validarCampos} from '../middlewares/validar-campos.js';
+import {existeCategoriaPorId} from '../helpers/db-validators.js';
+import {esAdminRole} from '../middlewares/validar-roles.js';
 
 export const routerCategoria=Router()
 

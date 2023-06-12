@@ -1,11 +1,11 @@
 import { Router } from "express";
 import {check} from 'express-validator'
 
-import { emailExiste, esRoleValido, existeUsuarioPorId } from "../helpers/db-validators.js";
-import { usuariosDelete, usuariosGet, usuariosPatch, usuariosPost, usuariosPut } from "../controllers/usuarios.js";
-import { validarCampos } from "../middlewares/validar-campos.js";
-import { validarJWT } from "../middlewares/validar-jwt.js";
-import { tieneRole } from "../middlewares/validar-roles.js";
+import {emailExiste, esRoleValido, existeUsuarioPorId } from "../helpers/db-validators.js";
+import {tieneRole} from "../middlewares/validar-roles.js";
+import {usuariosDelete, usuariosGet, usuariosPatch, usuariosPost, usuariosPut} from "../controllers/usuarios.js";
+import {validarCampos} from "../middlewares/validar-campos.js";
+import {validarJWT} from "../middlewares/validar-jwt.js";
 
 export const router=Router()
 

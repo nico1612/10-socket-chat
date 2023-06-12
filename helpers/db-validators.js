@@ -1,5 +1,5 @@
-import { Categoria } from '../models/categoria.js';
-import { Producto } from '../models/producto.js';
+import {Categoria} from '../models/categoria.js';
+import {Producto} from '../models/producto.js';
 import {Role} from '../models/role.js'
 import {Usuario} from '../models/usuario.js'
 

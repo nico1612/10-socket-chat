@@ -1,11 +1,11 @@
 import { Router } from "express"
 import { check } from "express-validator"
 
-import { validarJWT } from "../middlewares/validar-jwt.js"
-import { esAdminRole } from "../middlewares/validar-roles.js"
-import { validarCampos } from "../middlewares/validar-campos.js"
-import { actualizarProducto, borrarProducto, crearProducto, obtenerProducto, obtenerProductos } from "../controllers/productos.js"
-import { existeCategoriaPorId, existeProductoPorId } from "../helpers/db-validators.js"
+import {actualizarProducto, borrarProducto, crearProducto, obtenerProducto, obtenerProductos} from "../controllers/productos.js"
+import {esAdminRole} from "../middlewares/validar-roles.js"
+import {existeCategoriaPorId, existeProductoPorId} from "../helpers/db-validators.js"
+import {validarCampos} from "../middlewares/validar-campos.js"
+import {validarJWT} from "../middlewares/validar-jwt.js"
 
 export const routerProducto=Router()
 

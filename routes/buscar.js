@@ -1,6 +1,6 @@
-import { Router } from "express";
+import {Router} from "express";
 
-import { buscar } from "../controllers/buscar.js";
+import {buscar} from "../controllers/buscar.js";
 
 export const routerBuscar=Router()
 

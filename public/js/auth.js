@@ -1,4 +1,3 @@
-
 const miFormulario=document.querySelector('form')
 
 const url = ( window.location.hostname.includes('localhost') )

@@ -2,14 +2,14 @@ import express from 'express'
 import cors from 'cors'
 import {createServer } from "http"
 import { Server } from "socket.io";
+import fileUpload from 'express-fileupload';
 
 import { dbConnection } from '../database/config.js';
 import { routerAuth} from '../routes/auth.js'
+import { routerBuscar } from '../routes/buscar.js';
 import {routerCategoria} from '../routes/categorias.js'
 import { routerProducto } from '../routes/productos.js';
-import { routerBuscar } from '../routes/buscar.js';
 import { routerUploads } from '../routes/uploads.js';
-import fileUpload from 'express-fileupload';
 import { router } from '../routes/usuarios.js';
 import {socketController} from "../sockets/controller.js"
 
