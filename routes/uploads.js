@@ -8,7 +8,6 @@ import { validarArchivoSubir } from '../middlewares/validar-archivo.js';
 
 export const routerUploads=Router()
 
-
 routerUploads.post( '/', validarArchivoSubir, cargarArchivo );
 
 routerUploads.put('/:coleccion/:id', [

@@ -13,7 +13,7 @@ export const subirArchivo = ( files, extensionesValidas = ['png','jpg','jpeg','g
         if ( !extensionesValidas.includes( extension ) ) {
             return reject(`La extensión ${ extension } no es permitida - ${ extensionesValidas }`);
         }
-        
+
         const nombreTemp = uuidv4() + '.' + extension;
         const uploadPath = path.join( __dirname, '../uploads/', carpeta, nombreTemp );
 

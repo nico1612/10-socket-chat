@@ -16,7 +16,6 @@ export const socketController=async(socket = new Socket(),io)=>{
     io.emit('usuarios-activos',chatMensajes.usuariosArr)
     io.emit('recibir-mensajes',chatMensajes.ultimos10)
 
-
     socket.join(usuario.id)
 
     socket.on('disconnect', () => {

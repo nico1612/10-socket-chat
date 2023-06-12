@@ -2,8 +2,6 @@ import { response, request } from 'express';
 import jwt from 'jsonwebtoken';
 import { Usuario } from '../models/usuario.js';
 
-
-
 export const validarJWT = async( req = request, res = response, next ) => {
 
     const token = req.header('x-token');
@@ -15,7 +13,7 @@ export const validarJWT = async( req = request, res = response, next ) => {
     }
 
     try {
-        
+
         const { uid } = jwt.verify( token, process.env.SECRETORPRIVATEKEY );
 
         // leer el usuario que corresponde al uid
@@ -33,8 +31,7 @@ export const validarJWT = async( req = request, res = response, next ) => {
                 msg: 'Token no válido - usuario con estado: false'
             })
         }
-        
-        
+
         req.usuario = usuario;
         next();
 

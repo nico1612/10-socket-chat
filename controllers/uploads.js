@@ -11,7 +11,6 @@ import { Producto } from "../models/producto.js";
 
 export const cargarArchivo = async(req, res = response) => {
 
-
     try {
         
         // txt, md
@@ -39,7 +38,7 @@ export const actualizarImagen = async(req, res = response ) => {
                     msg: `No existe un usuario con el id ${ id }`
                 });
             }
-        
+
         break;
 
         case 'productos':
@@ -49,13 +48,12 @@ export const actualizarImagen = async(req, res = response ) => {
                     msg: `No existe un producto con el id ${ id }`
                 });
             }
-        
+
         break;
-    
+
         default:
             return res.status(500).json({ msg: 'Se me olvidó validar esto'});
     }
-
 
     // Limpiar imágenes previas
     if ( modelo.img ) {
@@ -66,12 +64,10 @@ export const actualizarImagen = async(req, res = response ) => {
         }
     }
 
-
     const nombre = await subirArchivo( req.files, undefined, coleccion );
     modelo.img = nombre;
 
     await modelo.save();
-
 
     res.json( modelo );
 
@@ -101,7 +97,7 @@ export const actualizarImagenCloudinary = async(req, res = response ) => {
                     msg: `No existe un producto con el id ${ id }`
                 });
             }
-        
+
         break;
     
         default:
@@ -117,13 +113,11 @@ export const actualizarImagenCloudinary = async(req, res = response ) => {
         cloudinary.uploader.destroy( public_id );
     }
 
-
     const { tempFilePath } = req.files.archivo
     const { secure_url } = await cloudinary.uploader.upload( tempFilePath );
     modelo.img = secure_url;
 
     await modelo.save();
-
 
     res.json( modelo );
 
@@ -143,7 +137,7 @@ export const mostrarImagen = async(req, res = response ) => {
                     msg: `No existe un usuario con el id ${ id }`
                 });
             }
-        
+
         break;
 
         case 'productos':
@@ -153,7 +147,7 @@ export const mostrarImagen = async(req, res = response ) => {
                     msg: `No existe un producto con el id ${ id }`
                 });
             }
-        
+
         break;
     
         default:

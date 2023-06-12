@@ -21,7 +21,7 @@ export const usuariosGet = async(req = request, res = response) => {
 }
 
 export const usuariosPost = async(req, res = response) => {
-    
+
     const { nombre, correo, password, rol } = req.body;
     const usuario = new Usuario({ nombre, correo, password, rol });
 
@@ -64,6 +64,5 @@ export const usuariosDelete = async(req, res = response) => {
     const { id } = req.params;
     const usuario = await Usuario.findByIdAndUpdate( id, { estado: false } );
 
-    
     res.json(usuario);
 }

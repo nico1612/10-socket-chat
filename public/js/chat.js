@@ -13,7 +13,6 @@ const ulUsuarios = document.querySelector('#ulUsuarios');
 const ulMensajes = document.querySelector('#ulMensajes');
 const btnSalir   = document.querySelector('#btnSalir');
 
-
 const validarJWT=async()=>{
 
     const tokenS=localStorage.getItem('token') || ''
@@ -101,6 +100,7 @@ const dibujarMensajes=(mensajes=[])=>{
 
     ulMensajes.innerHTML = mensajesHTML;
 }
+
 txtMensaje.addEventListener('keyup',({keyCode})=>{
     
     const mensaje =txtMensaje.value

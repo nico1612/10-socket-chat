@@ -78,7 +78,7 @@ const buscarProductos = async( termino = '', res = response ) => {
 }
 
 export const buscar = ( req, res = response ) => {
-    
+
     const { coleccion, termino  } = req.params;
 
     if ( !coleccionesPermitidas.includes( coleccion ) ) {

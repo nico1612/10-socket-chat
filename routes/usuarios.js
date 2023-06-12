@@ -9,7 +9,6 @@ import { tieneRole } from "../middlewares/validar-roles.js";
 
 export const router=Router()
 
-
 router.get('/', usuariosGet );
 
 router.put('/:id',[

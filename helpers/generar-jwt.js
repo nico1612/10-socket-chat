@@ -31,7 +31,6 @@ export const comprobarJWT=async(token='')=>{
             return null
         }
 
-
         const {uid}=jwt.verify(token,process.env.SECRETORPRIVATEKEY)
 
         const usuario = await Usuario.findById(uid)
