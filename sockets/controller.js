@@ -24,7 +24,7 @@ export const socketController=async(socket = new Socket(),io)=>{
     })
 
     socket.on('enviar-mensaje', ({ uid, mensaje }) => {
-        
+
         if ( uid ) {
             // Mensaje privado
             socket.to( uid ).emit( 'mensaje-privado', { de: usuario.nombre, mensaje });
