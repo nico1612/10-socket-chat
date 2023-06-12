@@ -83,8 +83,6 @@ const dibujarUsuarios=(usuarios=[])=>{
 
 const dibujarMensajes=(mensajes=[])=>{
 
-    console.log(mensajes)
-
     let mensajesHTML=''
     mensajes.forEach( ({ nombre, mensaje }) => {
 
