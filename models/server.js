@@ -22,7 +22,6 @@ export class ServerChat {
         this.server = createServer( this.app );
         this.io     = new Server( this.server );
 
-
         this.paths = {
             auth:       '/api/auth',
             buscar:     '/api/buscar',
@@ -31,7 +30,6 @@ export class ServerChat {
             usuarios:   '/api/usuarios',
             uploads:    '/api/uploads',
         }
-
 
         // Conectar a base de datos
         this.conectarDB();
@@ -49,7 +47,6 @@ export class ServerChat {
     async conectarDB() {
         await dbConnection();
     }
-
 
     middlewares() {
 
@@ -72,13 +69,14 @@ export class ServerChat {
     }
 
     routes() {
-        
+
         this.app.use( this.paths.auth,routerAuth);
         this.app.use( this.paths.buscar,routerBuscar);
         this.app.use( this.paths.categorias,routerCategoria);
         this.app.use( this.paths.productos,routerProducto);
         this.app.use(this.paths.usuarios, router);
-        this.app.use(this.paths.uploads, routerUploads)
+        this.app.use(this.paths.uploads, routerUploads);
+
     }
 
     sockets(){
