@@ -19,18 +19,18 @@ export const socketController=async(socket = new Socket(),io)=>{
 
     socket.join(usuario.id)
 
-    socket.on('disconnect',()=>{
-        ChatMensajes.borrarUsuario(usuario.id)
-        io.emit('usuarios-activos',chatMensajes.usuariosArr)
+    socket.on('disconnect', () => {
+        chatMensajes.desconectarUsuario( usuario.id );
+        io.emit('usuarios-activos', chatMensajes.usuariosArr );
     })
 
-    socket.on('enviar-mensaje',(uid,mensaje)=>{
-
-        if(uid){
+    socket.on('enviar-mensaje', ({ uid, mensaje }) => {
+        
+        if ( uid ) {
+            // Mensaje privado
             socket.to( uid ).emit( 'mensaje-privado', { de: usuario.nombre, mensaje });
-        }
-        else{
-            chatMensajes.enviarMensaje(usuario.id,usuario.nombre,mensaje)
+        } else {
+            chatMensajes.enviarMensaje(usuario.id, usuario.nombre, mensaje );
             io.emit('recibir-mensajes', chatMensajes.ultimos10 );
         }
 

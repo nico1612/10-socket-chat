@@ -6,8 +6,6 @@ class Mensaje{
     }
 }
 
-
-
 export class ChatMensajes {
 
     constructor(){
@@ -34,8 +32,8 @@ export class ChatMensajes {
         this.usuarios[usuario._id]=usuario
     }
 
-    borrarUsuario(id){
-        delete this.usuarios[id]
+    desconectarUsuario( id ) {
+        delete this.usuarios[id];
     }
 
 }

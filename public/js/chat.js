@@ -84,6 +84,8 @@ const dibujarUsuarios=(usuarios=[])=>{
 
 const dibujarMensajes=(mensajes=[])=>{
 
+    console.log(mensajes)
+
     let mensajesHTML=''
     mensajes.forEach( ({ nombre, mensaje }) => {
 
@@ -104,7 +106,6 @@ txtMensaje.addEventListener('keyup',({keyCode})=>{
     const mensaje =txtMensaje.value
     const uid= txtUid.value
 
-    console.log(keyCode)
     if(keyCode!==13){
         return
     }
